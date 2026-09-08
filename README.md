@@ -18,7 +18,7 @@ Courses are separate repositories deployed as GitHub Pages project sites. With t
 
 ## Deploying (GitHub Pages)
 
-1. Create a repository named `<username>.github.io` and push this folder to its default branch.
+1. Create a repository named `iamerdemyilmaz.github.io` and push this folder to its default branch.
 2. In the repository settings under **Pages**, set the source to that branch and the root folder. The `CNAME` file sets the custom domain; also enter `erdemyilmaz.me` in the custom domain field and turn on **Enforce HTTPS** once the certificate is issued (usually within an hour of DNS propagating).
 3. At the registrar (Porkbun), delete the parking records and add:
 
@@ -32,7 +32,7 @@ Courses are separate repositories deployed as GitHub Pages project sites. With t
 | AAAA | (blank, apex) | 2606:50c0:8001::153 |
 | AAAA | (blank, apex) | 2606:50c0:8002::153 |
 | AAAA | (blank, apex) | 2606:50c0:8003::153 |
-| CNAME | www | `<username>.github.io` |
+| CNAME | www | `iamerdemyilmaz.github.io` |
 
 These are GitHub's published Pages addresses; check the GitHub Pages documentation if a deployment check reports otherwise.
 
