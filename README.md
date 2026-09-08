@@ -5,8 +5,7 @@ Portfolio and course index for Erdem Yilmaz. Plain HTML and CSS, no build step, 
 ## Layout
 
 ```
-index.html          home: introduction, course list, contact
-courses.html        published and planned courses
+index.html          course cards (published and planned)
 about.html          biography, method, licence, contact
 404.html            not-found page served by GitHub Pages
 assets/css/site.css shared stylesheet (same colour tokens as the courses)
@@ -40,7 +39,7 @@ These are GitHub's published Pages addresses; check the GitHub Pages documentati
 
 ## Editing
 
-Each page is self-contained. Keep the header and footer identical across pages. Style rules match the courses: metric units, no long dashes (write "X to Y"), no employer-specific content. Places that need the author's own words are marked `<!-- AUTHOR: ... -->`.
+Each page is self-contained. Keep the sidebar and footer identical across pages. The layout is a fixed left sidebar (monogram and stacked uppercase navigation) with white cards on a grey page; add a course by copying the first card in `index.html` and drawing a new square tile as inline SVG. Style rules match the courses: metric units, no long dashes (write "X to Y"), no employer-specific content. Places that need the author's own words are marked `<!-- AUTHOR: ... -->`.
 
 ## Licence
 

@@ -13,44 +13,69 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<div class="layout">
 
-<header class="site-header">
-  <a class="brand" href="index.html">Erdem Yilmaz <span>· manufacturing engineering</span></a>
-  <nav class="site-nav" aria-label="Site">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+  <aside class="sidebar">
+    <a class="monogram" href="index.html" aria-label="Erdem Yilmaz, home">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false">
+        <title>EY monogram</title>
+        <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square">
+          <path d="M8 8 H30 M8 32 H26 M8 56 H30"/>
+          <path d="M38 8 L47 26 L56 8 M47 26 V56"/>
+        </g>
+      </svg>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html" aria-current="page">Courses</a>
+      <a href="about.html">About</a>
+    </nav>
+  </aside>
 
-<main>
-  <p class="kicker">Practitioner-written courses</p>
-  <h1>Engineering that survives contact with the factory</h1>
-  <p class="lead">I am a senior manufacturing engineer. I write free courses for engineers with roughly zero to five years of experience, on the part of the job that school does not teach: getting a design made, assembled, tested, and serviced at the volume and cost the business needs.</p>
+  <main>
+    <div class="intro">
+      <h1>Courses</h1>
+      <p class="lead">Free, practitioner-written courses for engineers with roughly zero to five years of experience, on getting a design made, assembled, tested, and serviced at the volume and cost the business needs.</p>
+    </div>
 
-  <h2>Courses</h2>
-  <ul class="cards">
-    <li class="card">
-      <h3><a href="https://erdemyilmaz.me/dfx/">Design for Manufacturing and Assembly: From Prototype to Production</a> <span class="status live">Published</span></h3>
-      <p>Seventeen modules covering DFM by process (machining, sheet metal, moulding, casting, additive, PCB), design for assembly, test, and service, tolerancing and process capability, cost modeling, supplier engagement, and a capstone review of a complete product.</p>
-      <p class="meta">About 90,000 words, 33 diagrams, 134 quiz questions, 148 cited sources. Free, no sign-up, progress saved in your browser.</p>
-    </li>
-  </ul>
-  <p><a href="courses.html">All courses and what is planned next</a></p>
+    <ul class="cards">
+      <li class="card">
+        <a class="tile" href="https://erdemyilmaz.me/dfx/" aria-hidden="true" tabindex="-1">
+          <svg viewBox="0 0 160 160" role="img" focusable="false">
+            <title>DFx course tile</title>
+            <rect width="160" height="160" fill="#1a1a1a"/>
+            <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round">
+              <path d="M30 118 V64 Q30 52 42 52 H118 Q130 52 130 64 V78 H108 V118 Z"/>
+              <circle cx="50" cy="96" r="8"/>
+              <circle cx="88" cy="96" r="8"/>
+              <path d="M30 40 H130" stroke-dasharray="6 6" stroke-width="3"/>
+            </g>
+            <text x="80" y="146" text-anchor="middle" fill="#ffffff" font-family="Bahnschrift, 'Arial Narrow', Arial, sans-serif" font-weight="700" font-size="20" letter-spacing="2">DFx</text>
+          </svg>
+        </a>
+        <div>
+          <h3><a href="https://erdemyilmaz.me/dfx/">Design for Manufacturing and Assembly</a></h3>
+          <p>From prototype to production. Seventeen modules on DFM by process (machining, sheet metal, moulding, casting, additive, PCB assembly), design for assembly, test, and service, tolerancing and process capability, cost modeling, supplier engagement, and a capstone review of a complete product. About 90,000 words, 33 diagrams, 134 quiz questions, and 148 cited sources. Free, no sign-up.</p>
+          <a class="more" href="https://erdemyilmaz.me/dfx/">Start the course</a>
+        </div>
+      </li>
 
-  <h2>How the courses are written</h2>
-  <p>Every rule of thumb comes with the reason behind it, so you can rebuild the rule when a supplier's numbers differ. Every real-world example is cited to a source you can read yourself, and anything that could not be verified is labelled as a rule of thumb rather than dressed up as data. Units are metric. Examples with invented numbers say so.</p>
-  <p>The sites are plain HTML with no tracking and no accounts. Quiz results stay in your browser.</p>
+      <li class="card wide">
+        <div>
+          <h3>In preparation <span class="tag">Planned</span></h3>
+          <p>Tolerance analysis and GD&amp;T in depth: datum strategy, position and profile in practice, stack-ups across assemblies, and what process capability data does to a tolerance decision.</p>
+          <p>New product introduction for engineers who lead it: phase gates, build planning, risk registers, supplier readiness, and the production ramp.</p>
+          <p class="small">A course is listed here once it is being researched and linked once it is published.</p>
+          <!-- AUTHOR: edit the planned list to match what you intend to write next. -->
+        </div>
+      </li>
+    </ul>
+  </main>
 
-  <h2>Contact</h2>
-  <p>Corrections, disagreements with a design rule, and suggestions for the next course are all welcome.</p>
-  <!-- AUTHOR: add your contact method here, for example a LinkedIn profile link or an email address. -->
-</main>
+  <footer class="site-footer">
+    <p>© 2026 Erdem Yilmaz. Course content CC BY-NC-SA 4.0, site code MIT, unless stated otherwise on a course.</p>
+    <!-- AUTHOR: confirm the licence line once the course licences are final. -->
+  </footer>
 
-<footer class="site-footer">
-  <p>© 2026 Erdem Yilmaz. Course content CC BY-NC-SA 4.0, site code MIT, unless stated otherwise on a course.</p>
-  <!-- AUTHOR: confirm the licence line once the course licences are final. -->
-</footer>
-
+</div>
 </body>
 </html>
