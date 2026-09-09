@@ -1,6 +1,6 @@
 # erdemyilmaz.me
 
-Portfolio and course index for Erdem Yilmaz. Plain HTML and CSS, no build step, no dependencies, no tracking.
+Portfolio and course index for Erdem Yilmaz. Plain HTML and CSS, no build step, no dependencies. Page views are counted with Cloudflare Web Analytics (cookieless beacon in each page head).
 
 ## Layout
 
