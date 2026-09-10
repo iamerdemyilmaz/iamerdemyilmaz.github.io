@@ -58,22 +58,22 @@
           <title id="fig-test-t">Architecture of an automated test station</title>
           <desc id="fig-test-d">Left to right: a fixture holding the device under test; instruments (pressure transducer, solenoid manifold, power supply); an OpenHTF sequencer in Python that receives limits from a versioned configuration file shown above it; a pass or fail verdict; and a result record per serial number written to storage. Two notes: limits live in configuration, not code; the result is written before anything else can fail.</desc>
           <g fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="14" y="110" width="104" height="70" rx="5"/>
-            <rect x="146" y="100" width="124" height="90" rx="5"/>
+            <rect x="14" y="110" width="100" height="70" rx="5"/>
+            <rect x="142" y="100" width="132" height="90" rx="5"/>
             <rect x="298" y="110" width="128" height="70" rx="5" class="accent"/>
-            <rect x="320" y="18" width="84" height="46" rx="5" stroke-dasharray="5 4"/>
+            <rect x="308" y="18" width="108" height="46" rx="5" stroke-dasharray="5 4"/>
             <rect x="454" y="110" width="74" height="70" rx="5"/>
             <rect x="556" y="100" width="72" height="90" rx="5"/>
-            <path d="M118 145 h28 M140 139 l6 6 l-6 6 M270 145 h28 M292 139 l6 6 l-6 6 M426 145 h28 M448 139 l6 6 l-6 6 M528 145 h28 M550 139 l6 6 l-6 6" class="accent" stroke-width="3"/>
+            <path d="M114 145 h28 M136 139 l6 6 l-6 6 M274 145 h24 M292 139 l6 6 l-6 6 M426 145 h28 M448 139 l6 6 l-6 6 M528 145 h28 M550 139 l6 6 l-6 6" class="accent" stroke-width="3"/>
             <path d="M362 64 v46 M356 104 l6 6 l6 -6" class="accent" stroke-width="3"/>
             <path d="M592 190 v40 M586 224 l6 6 l6 -6" stroke-dasharray="4 4"/>
           </g>
           <g class="t">
             <text x="24" y="140">Fixture</text><text x="24" y="158">and DUT</text>
-            <text x="156" y="124">Instruments</text>
-            <text x="156" y="144" class="m">pressure transducer</text><text x="156" y="160" class="m">solenoid manifold</text><text x="156" y="176" class="m">power supply</text>
-            <text x="308" y="140">OpenHTF sequencer</text><text x="308" y="158" class="m">Python, step by step</text>
-            <text x="330" y="38">Limits</text><text x="330" y="54" class="m">versioned config</text>
+            <text x="152" y="124">Instruments</text>
+            <text x="152" y="144" class="m">pressure transducer</text><text x="152" y="160" class="m">solenoid manifold</text><text x="152" y="176" class="m">power supply</text>
+            <text x="308" y="140">OpenHTF</text><text x="308" y="158" class="m">sequencer in Python</text>
+            <text x="318" y="38">Limits</text><text x="318" y="54" class="m">versioned config</text>
             <text x="464" y="140">Verdict</text><text x="464" y="158" class="m">pass / fail</text>
             <text x="564" y="124">Result</text><text x="564" y="142" class="m">per serial</text><text x="564" y="158" class="m">number</text>
             <text x="500" y="250" class="m">to storage</text>
@@ -147,22 +147,22 @@
           <title id="fig-loop-t">The yield improvement loop</title>
           <desc id="fig-loop-d">Five boxes connected in a loop: capture defect data at the station; rank defect modes by frequency and by rework cost; root-cause the top contributor; implement a control at the operation where the defect is created; re-measure; and back to capture. A note says the loop runs on one contributor at a time.</desc>
           <g fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="20" y="40" width="150" height="64" rx="5"/>
-            <rect x="245" y="40" width="150" height="64" rx="5"/>
-            <rect x="470" y="40" width="150" height="64" rx="5" class="accent"/>
-            <rect x="470" y="170" width="150" height="64" rx="5"/>
-            <rect x="245" y="170" width="150" height="64" rx="5"/>
-            <path d="M170 72 h75 M239 66 l6 6 l-6 6 M395 72 h75 M464 66 l6 6 l-6 6" class="accent" stroke-width="3"/>
-            <path d="M545 104 v66 M539 164 l6 6 l6 -6" class="accent" stroke-width="3"/>
-            <path d="M470 202 h-75 M401 196 l-6 6 l6 6" class="accent" stroke-width="3"/>
-            <path d="M245 202 H95 V104 M89 110 l6 -6 l6 6" class="accent" stroke-width="3"/>
+            <rect x="15" y="40" width="165" height="64" rx="5"/>
+            <rect x="238" y="40" width="165" height="64" rx="5"/>
+            <rect x="461" y="40" width="165" height="64" rx="5" class="accent"/>
+            <rect x="461" y="170" width="165" height="64" rx="5"/>
+            <rect x="238" y="170" width="165" height="64" rx="5"/>
+            <path d="M180 72 h58 M232 66 l6 6 l-6 6 M403 72 h58 M455 66 l6 6 l-6 6" class="accent" stroke-width="3"/>
+            <path d="M543 104 v66 M537 164 l6 6 l6 -6" class="accent" stroke-width="3"/>
+            <path d="M461 202 h-58 M409 196 l-6 6 l6 6" class="accent" stroke-width="3"/>
+            <path d="M238 202 H97 V104 M91 110 l6 -6 l6 6" class="accent" stroke-width="3"/>
           </g>
           <g class="t">
-            <text x="30" y="66">Capture</text><text x="30" y="84" class="m">defect data at the station</text>
-            <text x="255" y="66">Rank</text><text x="255" y="84" class="m">by frequency and rework cost</text>
-            <text x="480" y="66">Root-cause</text><text x="480" y="84" class="m">the top contributor</text>
-            <text x="480" y="196">Control</text><text x="480" y="214" class="m">where the defect is created</text>
-            <text x="255" y="196">Re-measure</text><text x="255" y="214" class="m">did the mode disappear?</text>
+            <text x="25" y="66">Capture</text><text x="25" y="84" class="m">defect data at the station</text>
+            <text x="248" y="66">Rank</text><text x="248" y="84" class="m">frequency and rework cost</text>
+            <text x="471" y="66">Root-cause</text><text x="471" y="84" class="m">the top contributor</text>
+            <text x="471" y="196">Control</text><text x="471" y="214" class="m">where the defect is created</text>
+            <text x="248" y="196">Re-measure</text><text x="248" y="214" class="m">did the mode disappear?</text>
             <text x="20" y="264" class="m">One contributor per pass. The data pipeline comes first; without it, ranking is opinion.</text>
           </g>
         </svg>
