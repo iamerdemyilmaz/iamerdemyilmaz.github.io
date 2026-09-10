@@ -13,7 +13,7 @@ CNAME               custom domain for GitHub Pages
 robots.txt, sitemap.xml
 ```
 
-Courses are separate repositories deployed as GitHub Pages project sites. With the custom domain on this user site, a project repository named `dfx` is served at `https://erdemyilmaz.me/dfx/`. Course links on this site use that full URL so they also work when the site is opened from a local file.
+Courses are separate repositories deployed as GitHub Pages project sites. With the custom domain on this user site, project repositories are served under it: `dfx` at `https://erdemyilmaz.me/dfx/` and `sixsigma` at `https://erdemyilmaz.me/sixsigma/`. Course links on this site use that full URL so they also work when the site is opened from a local file.
 
 ## Deploying (GitHub Pages)
 
