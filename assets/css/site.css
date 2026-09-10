@@ -159,6 +159,25 @@ p { max-width: 38rem; }
   .card h3 { font-size: 1.45rem; }
 }
 
+/* About page */
+.bio-head { display: flex; gap: 1.5rem; align-items: flex-start; }
+.portrait { width: 9rem; height: 9rem; object-fit: cover; border-radius: 4px; flex: none; }
+.work { list-style: none; padding: 0; margin: 0 0 1rem; }
+.work li { position: relative; padding-left: 1.1rem; margin: 0 0 0.9rem; max-width: 42rem; }
+.work li::before { content: ""; position: absolute; left: 0; top: 0.65rem; width: 0.45rem; height: 0.45rem; background: var(--accent); }
+.co { display: inline-block; font-family: var(--display); font-stretch: condensed; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-left: 0.35rem; white-space: nowrap; }
+.pull { border-left: 3px solid var(--accent); margin: 1.2rem 0; padding: 0.4rem 0 0.4rem 1rem; font-size: 1.05rem; }
+.pull cite { display: block; font-style: normal; font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+.diagram { margin: 1.5rem 0 2rem; }
+.diagram svg { width: 100%; height: auto; display: block; color: var(--fg); font-family: var(--display); font-size: 14px; }
+.diagram .m { fill: var(--muted); font-size: 12px; }
+.diagram .t text { fill: currentColor; }
+.diagram .t .m { fill: var(--muted); }
+.diagram .accent { stroke: var(--accent); }
+.diagram .accent-fill { fill: var(--accent); stroke: var(--accent); }
+.diagram figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+@media (max-width: 800px) { .bio-head { flex-direction: column; } }
+
 @media print {
   .sidebar { display: none; }
   .layout { display: block; }

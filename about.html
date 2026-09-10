@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About · Erdem Yilmaz</title>
-<meta name="description" content="About Erdem Yilmaz, senior manufacturing engineer, and how these courses are written.">
+<meta name="description" content="Erdem Yilmaz, senior manufacturing engineer: new product introduction, test development, process and fixture design, DFM and DFA, supplier engagement, and root cause work, and how the courses are made.">
 <link rel="canonical" href="https://erdemyilmaz.me/about.html">
 <link rel="icon" type="image/svg+xml" href="assets/img/ey-mark.svg">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -30,22 +30,163 @@
 
   <main>
     <article class="prose">
-      <h1>Erdem Yilmaz</h1>
-      <p class="lead">Senior manufacturing engineer with about eight years in new product introduction and product development: taking mechanical and electromechanical products from prototype to production, including design for manufacturing and assembly reviews, test and fixture development, process and tooling development, supplier and contract manufacturer engagement, and production ramps.</p>
-      <!-- AUTHOR: extend the biography above in your own words: education, where you are based, what you work on now. Keep employer-specific programs, suppliers, and figures out; the courses deliberately contain none. -->
+      <div class="bio-head">
+        <!-- AUTHOR: portrait. Save a square image as assets/img/portrait.jpg (about 600 by 600 px) and replace this comment with:
+             <img class="portrait" src="assets/img/portrait.jpg" alt="Erdem Yilmaz" width="160" height="160"> -->
+        <div>
+          <h1>Erdem Yilmaz</h1>
+          <p class="lead">Senior manufacturing engineer. About eight years taking mechanical and electromechanical products from prototype to volume production: build plans and readiness criteria, automated test stations, fixtures and process controls, design for manufacturing reviews, supplier change control, and the root cause work that keeps a line running. The sections below are organised by what I do rather than by where I did it.</p>
+        </div>
+      </div>
 
-      <h2>Why I write these</h2>
-      <p>Most of what I know about design for manufacturing I learned after the drawing was released: in supplier reviews, on the production floor, and in the meetings where a late change gets priced. None of it was secret, but none of it was collected anywhere a junior engineer could read it before the first ramp. The courses are my attempt to collect it, with the reasons attached and the sources cited, so the next engineer meets fewer surprises.</p>
+      <h2 id="npi">New product introduction</h2>
+      <ul class="work">
+        <li>Owned manufacturing engineering for a residential heat pump thermal battery built at contract manufacturers. Took it from prototype and pilot builds through qualification builds to volume production release in six months, and ran the development of a new-generation design into production alongside it. Owned the build plans, the readiness criteria, and the call on when the line could run without an engineer standing next to it. <span class="co">Harvest Thermal</span></li>
+        <li>Drove line readiness and design-for-x validation across two HVAC product generations. Managed a cut-in that had the line building two configurations at once: two sets of work instructions, two fixture states, and a sequencing plan that kept them apart on the floor. <span class="co">Gradient Comfort</span></li>
+        <li>Developed an air-source heat pump water heater from concept through validation, including the fixtures and instrumented stations the validation ran on. <span class="co">Vaughn Thermal</span></li>
+      </ul>
 
-      <h2>How the courses are made</h2>
-      <p>Every real-world example, statistic, and standard is checked against a source before it is written, and the source is cited so you can read it yourself. Numeric design rules come from published manufacturer design guides, standards bodies, and industry associations, paraphrased rather than copied. Where a claim could not be verified, the course says so rather than attaching false precision. Examples with invented numbers are labelled illustrative. Units are metric.</p>
+      <h2 id="test">Test development</h2>
+      <ul class="work">
+        <li>Built automated leak and functional test stations for sealed assemblies: pressure-decay measurement through calibrated transducers and solenoid sequencing, pass/fail logic in Python on OpenHTF, limits held in versioned configuration rather than in code, and every result logged per serial number. Defined the coverage and acceptance criteria by tracing each limit to a functional requirement rather than to what the instrument could resolve. Cut diagnosis and repair time per failed unit by roughly two thirds, because a technician could see which step failed and by how much instead of starting from a symptom. <span class="co">Harvest Thermal</span></li>
+        <li>Designed and built the fixtures and instrumented stations for evacuation, pressure test, and refrigerant charging on a heat pump water heater program, including vacuum verification and mass-based charging. <span class="co">Vaughn Thermal</span></li>
+        <li>Designed the inspection fixtures used to verify assemblies before they moved downstream. <span class="co">Gradient Comfort</span></li>
+      </ul>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 300" role="img" aria-labelledby="fig-test-t fig-test-d">
+          <title id="fig-test-t">Architecture of an automated test station</title>
+          <desc id="fig-test-d">Left to right: a fixture holding the device under test; instruments (pressure transducer, solenoid manifold, power supply); an OpenHTF sequencer in Python that receives limits from a versioned configuration file shown above it; a pass or fail verdict; and a result record per serial number written to storage. Two notes: limits live in configuration, not code; the result is written before anything else can fail.</desc>
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="14" y="110" width="104" height="70" rx="5"/>
+            <rect x="146" y="100" width="124" height="90" rx="5"/>
+            <rect x="298" y="110" width="128" height="70" rx="5" class="accent"/>
+            <rect x="320" y="18" width="84" height="46" rx="5" stroke-dasharray="5 4"/>
+            <rect x="454" y="110" width="74" height="70" rx="5"/>
+            <rect x="556" y="100" width="72" height="90" rx="5"/>
+            <path d="M118 145 h28 M140 139 l6 6 l-6 6 M270 145 h28 M292 139 l6 6 l-6 6 M426 145 h28 M448 139 l6 6 l-6 6 M528 145 h28 M550 139 l6 6 l-6 6" class="accent" stroke-width="3"/>
+            <path d="M362 64 v46 M356 104 l6 6 l6 -6" class="accent" stroke-width="3"/>
+            <path d="M592 190 v40 M586 224 l6 6 l6 -6" stroke-dasharray="4 4"/>
+          </g>
+          <g class="t">
+            <text x="24" y="140">Fixture</text><text x="24" y="158">and DUT</text>
+            <text x="156" y="124">Instruments</text>
+            <text x="156" y="144" class="m">pressure transducer</text><text x="156" y="160" class="m">solenoid manifold</text><text x="156" y="176" class="m">power supply</text>
+            <text x="308" y="140">OpenHTF sequencer</text><text x="308" y="158" class="m">Python, step by step</text>
+            <text x="330" y="38">Limits</text><text x="330" y="54" class="m">versioned config</text>
+            <text x="464" y="140">Verdict</text><text x="464" y="158" class="m">pass / fail</text>
+            <text x="564" y="124">Result</text><text x="564" y="142" class="m">per serial</text><text x="564" y="158" class="m">number</text>
+            <text x="500" y="250" class="m">to storage</text>
+            <text x="14" y="272" class="m">Limits live in configuration, not in code: a limit change is a reviewed file revision, not a code release.</text>
+            <text x="14" y="290" class="m">The result record is written before anything else can fail, so no tested unit is ever unaccounted for.</text>
+          </g>
+        </svg>
+        <figcaption>How I lay out a test station. The two notes are the design opinions; the rest is plumbing.</figcaption>
+      </figure>
+
+      <h2 id="process">Process, tooling, and fixtures</h2>
+      <ul class="work">
+        <li>Designed assembly, brazing, and inspection fixtures in SolidWorks and deployed them to the assembly line, then wrote the SOPs and field-service instructions the technicians worked to. <span class="co">Gradient Comfort</span></li>
+        <li>Led Process FMEAs on critical assembly and test operations and implemented the controls that came out of them: torque control, go/no-go gauges, poka-yoke fixturing, and SPC monitoring on the parameters that moved. Trained the contract manufacturer's line technicians on each control, on their floor, on their shift. <span class="co">Harvest Thermal</span></li>
+        <li>Led a value stream mapping project across a pressure-vessel production area that cut manufacturing throughput time by about 15 percent. <span class="co">Hubbell Electric Water Heaters</span></li>
+      </ul>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 260" role="img" aria-labelledby="fig-321-t fig-321-d">
+          <title id="fig-321-t">The 3-2-1 locating principle</title>
+          <desc id="fig-321-d">Top view of a rectangular part resting on three support pads (datum A), pushed by clamps against two pins along its bottom edge (datum B) and one pin on its left edge (datum C). Arrows show clamping forces directed toward the locators. Six degrees of freedom are constrained exactly, and the fixture datums match the drawing datums.</desc>
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="120" y="50" width="300" height="150" rx="3"/>
+            <circle cx="180" cy="90" r="14" stroke-dasharray="4 3"/><circle cx="360" cy="90" r="14" stroke-dasharray="4 3"/><circle cx="270" cy="165" r="14" stroke-dasharray="4 3"/>
+            <circle cx="170" cy="212" r="8" class="accent-fill"/><circle cx="370" cy="212" r="8" class="accent-fill"/>
+            <circle cx="108" cy="125" r="8" class="accent-fill"/>
+            <path d="M270 20 v22 M264 36 l6 6 l6 -6" stroke-width="3"/>
+            <path d="M460 125 h-32 M434 119 l-6 6 l6 6" stroke-width="3"/>
+            <path d="M120 200 H420" class="accent" stroke-width="3"/>
+            <path d="M120 50 V200" class="accent" stroke-width="3"/>
+          </g>
+          <g class="t">
+            <text x="200" y="94" class="m">A</text><text x="380" y="94" class="m">A</text><text x="290" y="169" class="m">A</text>
+            <text x="150" y="240" class="m">B</text><text x="384" y="240" class="m">B</text>
+            <text x="84" y="106" class="m">C</text>
+            <text x="470" y="60">Three pads: datum A</text><text x="470" y="78" class="m">rest, remove 3 DOF</text>
+            <text x="470" y="106">Two pins: datum B</text><text x="470" y="124" class="m">edge, remove 2 DOF</text>
+            <text x="470" y="152">One pin: datum C</text><text x="470" y="170" class="m">end, remove 1 DOF</text>
+            <text x="470" y="200" class="m">Clamps push toward</text><text x="470" y="216" class="m">the locators, never</text><text x="470" y="232" class="m">against a free face.</text>
+            <text x="14" y="30" class="m">Top view</text>
+          </g>
+        </svg>
+        <figcaption>The principle behind every fixture I have designed: constrain six degrees of freedom exactly once, and make the fixture's datums the drawing's datums.</figcaption>
+      </figure>
+
+      <h2 id="dfx">Design for manufacturing and assembly</h2>
+      <ul class="work">
+        <li>Ran DFM and DFA on two product generations and validated manufacturability and assembly flow on the line rather than on paper; assembly waste fell by about a fifth and production yield rose. Ran large-assembly reviews in SolidWorks, with interference checking and tolerance stack analysis, to catch fit and clearance problems before a physical build. <span class="co">Gradient Comfort</span></li>
+        <li>Owned sheet metal design and one complex injection moulded part from design through tooling and first articles, working the parts through waterjet cutting, forming, and moulding. <span class="co">Gradient Comfort</span></li>
+        <li>Led design communication with contract manufacturers, running DFx reviews in CAD and DFM tools, and performed tolerance stack-up analysis to drive the design changes that made assembly repeatable. <span class="co">Vaughn Thermal</span></li>
+        <li>Applied DFMA principles to part designs and released production-ready drawings. <span class="co">Hubbell Electric Water Heaters</span></li>
+      </ul>
+
+      <h2 id="suppliers">Supplier and contract manufacturer engagement</h2>
+      <ul class="work">
+        <li>Owned engineering change orders and supplier change control. Released BOMs, drawings, SOPs, work instructions, and test procedures with revision traceability in PLM, and planned cut-ins and stock use-up so that a design change stranded no inventory and stopped no line. <span class="co">Harvest Thermal</span></li>
+        <li>Ran root cause and corrective action on supplier quality escapes: quality notifications, returns, and long-term corrective action rather than containment alone. Raised incoming acceptance substantially over the program. Caught a long-lead part built to the wrong revision before it was received, which prevented a line stop. <span class="co">Harvest Thermal</span></li>
+        <li>Ran design and manufacturability communication with contract manufacturers through development. <span class="co">Vaughn Thermal</span></li>
+      </ul>
+
+      <h2 id="quality">Root cause and quality</h2>
+      <ul class="work">
+        <li>Raised first-pass yield on a pilot line to over 90 percent. There was no manufacturing execution system and no ERP, so the first step was a data pipeline in Power BI built from what the line actually produced; then defect modes ranked by frequency and by the cost of the rework each caused; then the top contributors root-caused one at a time. Rework halved and weekly output tripled. <span class="co">Harvest Thermal</span></li>
+        <!-- AUTHOR: pull quote slot. Once the recommendation text is available, a one-sentence attributed quote with the yield figures goes here, linked to the recommendation. -->
+        <li>Root-caused recurring field failures using 8D and closed the loop in the design rather than in the field, redesigning the affected subsystems. No recurrence after the fix shipped. <span class="co">Gradient Comfort</span></li>
+        <li>Investigated a purchased pump that seized progressively in service, working from field symptoms and returned units back to the physical mechanism. <span class="co">Gradient Comfort</span></li>
+      </ul>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 280" role="img" aria-labelledby="fig-loop-t fig-loop-d">
+          <title id="fig-loop-t">The yield improvement loop</title>
+          <desc id="fig-loop-d">Five boxes connected in a loop: capture defect data at the station; rank defect modes by frequency and by rework cost; root-cause the top contributor; implement a control at the operation where the defect is created; re-measure; and back to capture. A note says the loop runs on one contributor at a time.</desc>
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="20" y="40" width="150" height="64" rx="5"/>
+            <rect x="245" y="40" width="150" height="64" rx="5"/>
+            <rect x="470" y="40" width="150" height="64" rx="5" class="accent"/>
+            <rect x="470" y="170" width="150" height="64" rx="5"/>
+            <rect x="245" y="170" width="150" height="64" rx="5"/>
+            <path d="M170 72 h75 M239 66 l6 6 l-6 6 M395 72 h75 M464 66 l6 6 l-6 6" class="accent" stroke-width="3"/>
+            <path d="M545 104 v66 M539 164 l6 6 l6 -6" class="accent" stroke-width="3"/>
+            <path d="M470 202 h-75 M401 196 l-6 6 l6 6" class="accent" stroke-width="3"/>
+            <path d="M245 202 H95 V104 M89 110 l6 -6 l6 6" class="accent" stroke-width="3"/>
+          </g>
+          <g class="t">
+            <text x="30" y="66">Capture</text><text x="30" y="84" class="m">defect data at the station</text>
+            <text x="255" y="66">Rank</text><text x="255" y="84" class="m">by frequency and rework cost</text>
+            <text x="480" y="66">Root-cause</text><text x="480" y="84" class="m">the top contributor</text>
+            <text x="480" y="196">Control</text><text x="480" y="214" class="m">where the defect is created</text>
+            <text x="255" y="196">Re-measure</text><text x="255" y="214" class="m">did the mode disappear?</text>
+            <text x="20" y="264" class="m">One contributor per pass. The data pipeline comes first; without it, ranking is opinion.</text>
+          </g>
+        </svg>
+        <figcaption>The method behind the yield work. The defect names belong to the employer; the loop is mine.</figcaption>
+      </figure>
+
+      <h2 id="tools">Tools and methods</h2>
+      <p>SolidWorks and SolidWorks PDM, Arena PLM, KiCad, Python, OpenHTF, Power BI, GD&amp;T drawing interpretation, sheet metal design, tolerance stack analysis, Process FMEA, 8D and 5-Why, SPC and capability analysis.</p>
+
+      <h2 id="education">Education</h2>
+      <p>MS Mechanical Engineering, University of Bridgeport. First Place, Graduate Papers, ASEE Northeast Section Conference, 2018. BS Mechanical Engineering, Selcuk University.</p>
+
+      <h2 id="why">Why I write the courses</h2>
+      <p>Most of what is above I learned after the drawing was released: in supplier reviews, on the production floor, and in the meetings where a late change gets priced. None of it was secret, but none of it was collected anywhere a junior engineer could read it before the first ramp. The courses collect it, with the reasons attached and the sources cited, so the next engineer meets fewer surprises.</p>
+
+      <h2 id="method">How the courses are made</h2>
+      <p>Every real-world example, statistic, and standard is checked against a source before it is written, and the source is cited so you can read it yourself. Numeric design rules come from published manufacturer design guides, standards bodies, and industry associations, paraphrased rather than copied. Where a claim could not be verified, the course says so rather than attaching false precision. Examples with invented numbers are labelled illustrative. Units are metric. The courses contain no information from my employers; this page describes my own work in general terms and nothing of theirs.</p>
       <p>The sites are plain HTML, CSS, and JavaScript with no frameworks and no accounts. Page views are counted with Cloudflare Web Analytics, which sets no cookies and records no personal identifiers, only aggregate page and referrer counts. Everything else works offline from a local copy.</p>
 
-      <h2>Licence</h2>
+      <h2 id="licence">Licence</h2>
       <p>Course content (text, tables, diagrams, exercises, quizzes) is offered under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 unless a course states otherwise. Site code is MIT licensed. Cited sources remain the property of their publishers.</p>
       <!-- AUTHOR: confirm once the course licences are final. -->
 
-      <h2>Contact</h2>
+      <h2 id="contact">Contact</h2>
       <p>Corrections and disagreements are welcome and will be credited.</p>
       <!-- AUTHOR: add your contact method here, for example a LinkedIn profile link or an email address. -->
     </article>
